@@ -1,17 +1,35 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header>
+
+  <ion-toolbar color="primary">
     <ion-title>
-      Tab 2
+      Gestionar HTML largos
     </ion-title>
   </ion-toolbar>
+  <ion-button expand="full" (click)="generarPDF()">Generar PDF</ion-button>
+
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+    <div #container>
+      <div class="dashboard-content">
+
+        <div class="seccion header">
+          <h1>Dashboard</h1>
+        </div>
+
+        <div class="seccion list-container">
+          <h2>List</h2>
+          <ul *ngFor="let lista of datosLista">
+            <li>{{lista}}</li>
+          </ul>
+        </div>
+        <div class="seccion table-container">
+          <h2>Table</h2>
+          <app-tablas [datosTabla]="datosTabla"></app-tablas>
+        </div>
+
+    </div>
+  </div>
+
 </ion-content>
